@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nubra SDK Converter</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Nubra SDK Converter</h1>
+        <p class="subtitle">
+          Paste broker code to convert it into Nubra SDK–compliant code via a secure Nubra backend.
+        </p>
+      </header>
+
+      <section class="form-section">
+        <div class="field-group">
+          <label for="brokerSelect">Broker</label>
+          <select id="brokerSelect">
+            <option value="" disabled selected>Select broker</option>
+            <option value="ZERODHA">Zerodha</option>
+            <option value="IBKR">Interactive Brokers</option>
+            <option value="BINANCE">Binance</option>
+            <option value="OTHER">Other / Custom</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="languageSelect">Language</label>
+          <select id="languageSelect">
+            <option value="" disabled selected>Select language</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript / TypeScript</option>
+            <option value="pinescript">Pine Script</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="inputCode">Broker Code</label>
+          <textarea
+            id="inputCode"
+            rows="10"
+            placeholder="Paste your broker-specific trading code here..."
+          ></textarea>
+          <div class="hint">
+            This code will be sent securely to your Nubra backend for conversion. No API keys are stored in the extension.
+          </div>
+        </div>
+
+        <!-- Prompt-modifier controls (core for your UX needs, interpretation is done in backend) -->
+        <div class="field-group prompt-options">
+          <label>Conversion Options (affect backend prompt)</label>
+          <div class="options-row">
+            <label class="checkbox">
+              <input type="checkbox" id="optStrictSemantics" checked />
+              <span>Preserve trading logic strictly</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="optAddRiskChecks" />
+              <span>Suggest additional risk checks</span>
+            </label>
+          </div>
+          <div class="options-row">
+            <label class="checkbox">
+              <input type="checkbox" id="optExplainChanges" />
+              <span>Include short explanation comments</span>
+            </label>
+          </div>
+        </div>
+
+        <button id="convertButton" class="primary-button">Convert to Nubra SDK</button>
+        <div id="statusMessage" class="status-message" aria-live="polite"></div>
+      </section>
+
+      <section class="output-section">
+        <label for="outputCode">Nubra SDK Code</label>
+        <textarea
+          id="outputCode"
+          rows="10"
+          readonly
+          placeholder="Converted Nubra SDK code will appear here..."
+        ></textarea>
+        <button id="copyButton" class="secondary-button">Copy to Clipboard</button>
+      </section>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
+

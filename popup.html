@@ -2,91 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Nubra SDK Converter</title>
+    <title>Nubra AI Assistant</title>
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <h1 class="title">Nubra SDK Converter</h1>
-        <p class="subtitle">
-          Paste broker code to convert it into Nubra SDK–compliant code via a secure Nubra backend.
-        </p>
-      </header>
+    <div class="popup-container">
+      <div class="popup-header">
+        <div class="brand">
+          <img src="icons/icon48.png" alt="Nubra AI" class="brand-icon">
+          <div class="brand-text">
+            <h1>Nubra AI Assistant</h1>
+            <p class="brand-subtitle">Any Broker Code Converter</p>
+          </div>
+        </div>
+      </div>
 
-      <section class="form-section">
-        <div class="field-group">
-          <label for="brokerSelect">Broker</label>
-          <select id="brokerSelect">
-            <option value="" disabled selected>Select broker</option>
-            <option value="ZERODHA">Zerodha</option>
-            <option value="IBKR">Interactive Brokers</option>
-            <option value="BINANCE">Binance</option>
-            <option value="OTHER">Other / Custom</option>
-          </select>
+      <div class="popup-content">
+        <div class="quick-actions">
+          <button class="action-btn primary" id="openSidebarBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M3 12h18m-9-9v18m6-6v6m0 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Open AI Assistant
+          </button>
         </div>
 
-        <div class="field-group">
-          <label for="languageSelect">Language</label>
-          <select id="languageSelect">
-            <option value="" disabled selected>Select language</option>
-            <option value="python">Python</option>
-            <option value="javascript">JavaScript / TypeScript</option>
-            <option value="pinescript">Pine Script</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="field-group">
-          <label for="inputCode">Broker Code</label>
-          <textarea
-            id="inputCode"
-            rows="10"
-            placeholder="Paste your broker-specific trading code here..."
-          ></textarea>
-          <div class="hint">
-            This code will be sent securely to your Nubra backend for conversion. No API keys are stored in the extension.
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🚀</div>
+            <div class="feature-text">
+              <strong>Convert Any Code</strong>
+              <span>Supports 25+ brokers</span>
+            </div>
+          </div>
+          
+          <div class="feature">
+            <div class="feature-icon">💬</div>
+            <div class="feature-text">
+              <strong>Chat History</strong>
+              <span>Saved automatically</span>
+            </div>
+          </div>
+          
+          <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <div class="feature-text">
+              <strong>Dark Theme</strong>
+              <span>Beautiful blue design</span>
+            </div>
           </div>
         </div>
 
-        <!-- Prompt-modifier controls (core for your UX needs, interpretation is done in backend) -->
-        <div class="field-group prompt-options">
-          <label>Conversion Options (affect backend prompt)</label>
-          <div class="options-row">
-            <label class="checkbox">
-              <input type="checkbox" id="optStrictSemantics" checked />
-              <span>Preserve trading logic strictly</span>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" id="optAddRiskChecks" />
-              <span>Suggest additional risk checks</span>
-            </label>
-          </div>
-          <div class="options-row">
-            <label class="checkbox">
-              <input type="checkbox" id="optExplainChanges" />
-              <span>Include short explanation comments</span>
-            </label>
-          </div>
+        <div class="footer">
+          <p class="version">v2.0 • Made with ❤️ for traders</p>
         </div>
-
-        <button id="convertButton" class="primary-button">Convert to Nubra SDK</button>
-        <div id="statusMessage" class="status-message" aria-live="polite"></div>
-      </section>
-
-      <section class="output-section">
-        <label for="outputCode">Nubra SDK Code</label>
-        <textarea
-          id="outputCode"
-          rows="10"
-          readonly
-          placeholder="Converted Nubra SDK code will appear here..."
-        ></textarea>
-        <button id="copyButton" class="secondary-button">Copy to Clipboard</button>
-      </section>
+      </div>
     </div>
 
     <script src="popup.js"></script>
   </body>
 </html>
-

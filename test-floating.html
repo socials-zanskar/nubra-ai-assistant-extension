@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Floating Button</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Page for Nubra AI Assistant</h1>
+    <p>This page is used to test if the floating button appears correctly.</p>
+    <p>Check the browser console for debug messages.</p>
+    
+    <script>
+        console.log('Test page loaded');
+        
+        // Check if floating button exists
+        setTimeout(() => {
+            const button = document.getElementById('nubra-floating-button');
+            if (button) {
+                console.log('✅ Floating button found:', button);
+            } else {
+                console.log('❌ Floating button NOT found');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -130,6 +130,7 @@ body.nubra-resizing * {
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .nubra-header-title {
@@ -139,6 +140,7 @@ body.nubra-resizing * {
   font-weight: 700;
   white-space: nowrap;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 #nubra-sidebar.nubra-sidebar-collapsed .nubra-header-icon,
@@ -507,10 +509,21 @@ body.nubra-resizing * {
   margin-bottom: 16px;
 }
 
+.nubra-welcome-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nubra-welcome-brand .nubra-welcome-icon {
+  margin-bottom: 0;
+}
+
 .nubra-welcome-message h3 {
-  margin: 0 0 16px 0;
+  margin: 0;
   color: #f8fafc;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   -webkit-background-clip: text;
@@ -522,6 +535,7 @@ body.nubra-resizing * {
   margin: 12px 0;
   color: #94a3b8;
   line-height: 1.5;
+  font-size: 16px;
 }
 
 .nubra-welcome-message ul {
@@ -534,6 +548,7 @@ body.nubra-resizing * {
   margin: 8px 0;
   color: #e2e8f0;
   line-height: 1.4;
+  font-size: 15px;
 }
 
 .nubra-welcome-message strong {

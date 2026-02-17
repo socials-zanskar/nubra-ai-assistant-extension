@@ -119,8 +119,8 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
       <div class="nubra-resize-handle" id="nubra-resize-handle" title="Drag to resize"></div>
       <div class="nubra-sidebar-header">
         <div class="nubra-header-row">
-          <img src="${this.icon32Url}" alt="Nubra AI" class="nubra-header-icon">
-          <h3 class="nubra-header-title">Nubra AI Assistant</h3>
+          <img src="${this.icon32Url}" alt="Nubra AI" class="nubra-header-icon" id="nubra-header-home">
+          <h3 class="nubra-header-title" id="nubra-header-home-title">Nubra AI Assistant</h3>
           <div class="nubra-mode-switch">
             <button class="nubra-mode-btn" id="nubra-mode-chat-btn">Chat</button>
             <button class="nubra-mode-btn active" id="nubra-mode-convert-btn">Code Convert</button>
@@ -237,17 +237,18 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
 
     const welcomeMessage = `
       <div class="nubra-welcome-message">
-        <div class="nubra-welcome-icon">
-          <img src="${this.welcomeLogoUrl}" alt="Nubra AI" width="42" height="42">
+        <div class="nubra-welcome-brand">
+          <div class="nubra-welcome-icon">
+            <img src="${this.welcomeLogoUrl}" alt="Nubra AI" width="42" height="42">
+          </div>
+          <h3>Nubra AI Assistant</h3>
         </div>
-        <h3>Nubra AI Assistant</h3>
         <p>Build, convert, and integrate trading logic with confidence.</p>
         <p>Choose a mode from the top bar to begin:</p>
         <ul>
-          <li><strong>Code Convert</strong> – Transform broker strategy code into Nubra SDK</li>
-          <li><strong>Chat</strong> – Ask questions about Nubra SDK APIs, workflows, and integration</li>
+          <li><strong>Code Convert</strong> - Transform broker strategy code into Nubra SDK</li>
+          <li><strong>Chat</strong> - Ask questions about Nubra SDK APIs, workflows, and integration</li>
         </ul>
-        <p><strong>Keyboard shortcut:</strong> Ctrl/Cmd + Enter</p>
       </div>
     `;
 
@@ -343,6 +344,11 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
     }
   }
 
+  goToChatSection() {
+    this.setMode('chat');
+    this.updateChatHistoryUI();
+  }
+
   updateModeUI() {
     const chatBtn = document.getElementById('nubra-mode-chat-btn');
     const convertBtn = document.getElementById('nubra-mode-convert-btn');
@@ -419,6 +425,8 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
     console.log('Setting up event listeners...');
 
     const closeBtn = document.getElementById('nubra-close-btn');
+    const headerHome = document.getElementById('nubra-header-home');
+    const headerHomeTitle = document.getElementById('nubra-header-home-title');
     const modeChatBtn = document.getElementById('nubra-mode-chat-btn');
     const modeConvertBtn = document.getElementById('nubra-mode-convert-btn');
     const sendBtn = document.getElementById('nubra-send-btn');
@@ -430,6 +438,8 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
     
     console.log('Elements found:', {
       closeBtn: !!closeBtn,
+      headerHome: !!headerHome,
+      headerHomeTitle: !!headerHomeTitle,
       modeChatBtn: !!modeChatBtn,
       modeConvertBtn: !!modeConvertBtn,
       sendBtn: !!sendBtn,
@@ -442,6 +452,18 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         this.toggleSidebar();
+      });
+    }
+
+    if (headerHome) {
+      headerHome.addEventListener('click', () => {
+        this.goToChatSection();
+      });
+    }
+
+    if (headerHomeTitle) {
+      headerHomeTitle.addEventListener('click', () => {
+        this.goToChatSection();
       });
     }
 
@@ -1169,6 +1191,7 @@ if (!window.__nubraMessageListenerAdded) {
     return true;
   });
 }
+
 
 
 

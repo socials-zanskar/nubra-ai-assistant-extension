@@ -8,8 +8,12 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-async function callLocalEndpoint(path, payload) {
-  const endpoints = [`http://localhost:3000${path}`, `http://127.0.0.1:3000${path}`];
+async function callBackendEndpoint(path, payload) {
+  const endpoints = [
+    `https://nubra-code-converter-backend.vercel.app${path}`,
+    `http://localhost:3000${path}`,
+    `http://127.0.0.1:3000${path}`,
+  ];
   let lastError = null;
 
   for (const endpoint of endpoints) {
@@ -48,7 +52,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
   if (!endpointPath) return false;
 
-  callLocalEndpoint(endpointPath, request.payload)
+  callBackendEndpoint(endpointPath, request.payload)
     .then((result) => {
       sendResponse(result);
     })

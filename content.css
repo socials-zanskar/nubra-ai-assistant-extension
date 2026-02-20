@@ -1640,21 +1640,23 @@ body.nubra-resizing * {
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-mode-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: transparent;
-  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(255, 255, 255, 0.04);
+  color: rgba(229, 231, 235, 0.78);
+  box-shadow: none;
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-mode-btn.active {
-  background: rgba(255, 255, 255, 0.11);
-  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.085);
+  border-color: rgba(255, 255, 255, 0.18);
   color: #ffffff;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.34);
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-mode-switch {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-icon-action {
@@ -1769,13 +1771,14 @@ body.nubra-resizing * {
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-input-shell {
-  background: linear-gradient(180deg, rgba(12, 15, 22, 0.78), rgba(8, 11, 18, 0.74));
-  border-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(10, 13, 20, 0.76), rgba(7, 10, 16, 0.72));
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-input-shell:focus-within {
-  border-color: rgba(255, 255, 255, 0.26);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 12px 28px rgba(0, 0, 0, 0.38);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 10px 22px rgba(0, 0, 0, 0.34);
 }
 
 #nubra-sidebar.nubra-theme-night #nubra-code-input {
@@ -1790,11 +1793,15 @@ body.nubra-resizing * {
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-send-btn {
-  background: linear-gradient(135deg, rgba(245, 245, 245, 0.24) 0%, rgba(214, 214, 214, 0.2) 100%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-send-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(224, 224, 224, 0.28) 100%);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
 }
 
 #nubra-sidebar.nubra-theme-night .nubra-send-btn:disabled {
@@ -1965,4 +1972,5 @@ body.nubra-resizing * {
   border-color: rgba(255, 255, 255, 0.14);
   color: #e5e7eb;
 }
+
 

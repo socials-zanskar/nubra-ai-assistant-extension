@@ -79,7 +79,7 @@ async function extractSelectionFromTab(tabId) {
 
 async function callBackendEndpoint(path, payload) {
   const endpoints = [
-    `https://nubra-code-converter-backend.vercel.app${path}`,
+    `https://nubra-ai-assistant-extension.vercel.app${path}`,
   ];
   let lastError = null;
 
@@ -111,7 +111,7 @@ async function callBackendEndpoint(path, payload) {
 
 async function callBackendHealth() {
   const endpoints = [
-    'https://nubra-code-converter-backend.vercel.app/health',
+    'https://nubra-ai-assistant-extension.vercel.app/health',
   ];
   let lastError = null;
 
@@ -217,3 +217,4 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     });
   })();
 });
+

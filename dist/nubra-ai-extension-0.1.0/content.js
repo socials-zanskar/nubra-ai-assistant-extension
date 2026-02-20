@@ -1,4 +1,4 @@
-﻿// Content script for Nubra AI Assistant
+// Content script for Nubra AI Assistant
 // Injects floating button and sidebar functionality
 
 console.log('Nubra AI Assistant content script loaded');
@@ -1362,7 +1362,7 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
       } else {
         this.addMessage(
           'assistant',
-          `Error: ${result.error || 'Conversion failed. Ensure backend is running on localhost:3000.'}`,
+          `Error: ${result.error || 'Conversion failed. Ensure backend is reachable and configured.'}`,
           'error'
         );
       }
@@ -1947,7 +1947,7 @@ window.NubraAIAssistant = window.NubraAIAssistant || class NubraAIAssistant {
     if (!normalizedText.trim()) return '';
     const isWarning =
       /(^|\n)\s*(?:#{0,6}\s*)?(warning|important|caution|mandatory|must|constraint)\b[:\-]?/i.test(normalizedText) ||
-      /[⚠]/.test(normalizedText);
+      /[?]/.test(normalizedText);
     const hasExplanationHeading = /(^|\n)\s*#{0,6}\s*Explanation\b/i.test(normalizedText);
     const hasSummaryHeading = /(^|\n)\s*#{0,6}\s*Summary\b/i.test(normalizedText);
     const rendered = this.renderAssistantRichText(normalizedText);
@@ -2227,6 +2227,7 @@ if (!window.__nubraMessageListenerAdded) {
     return true;
   });
 }
+
 
 
 
